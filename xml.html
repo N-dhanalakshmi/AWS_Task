@@ -1,0 +1,66 @@
+
+ 
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<body style="width: 100%;">
+  <br >
+ <a href="#"  style="color: aliceblue;margin-left: 90%;" class="button">Login</a>
+ <div>
+  <h1>Hello, Welcome! 🎉</h1>
+ 
+  <h2> Enter your details to Regiter</h2><br>
+  <form id="form1" class="forms"  style="margin-left: 38%;">
+   <label for="name">First Name</label> <br><br>
+  <input name="Name"  type="text" placeholder="Dhana" required><br><br>
+  <label for="age">Age</label> <br><br>
+   <input name="age" type="number" placeholder="21" required> <br><br>
+   <label for="Tech" >Technology</label> <br><br>
+   <input name="Tech" type="text" placeholder="Dotnet" required > <br><br><br>
+   <button style="color: aliceblue;" type="button" onclick="showDetails()" >Submit</button>
+  </form> 
+  </div> 
+ <h2 id="Title">See Below</h2>
+ <p id="details" style="text-align: center;font-size: medium;"> Once you entered your details you can view them below</p>
+
+ <script>
+ function showTitle(){
+ var xttp=new XMLHttpRequest();
+ xttp.onreadystatechange=function(){
+ if(this.readyState==4 && this.status==200){
+ document.getElementById("Title").innerHtml=this.responseText;}};
+ xttp.open("GET","./Users/dhana.neelakandan/ACE11609/ajaxText.txt",true);
+ xttp.send();
+ }
+ function showDetails(){
+var FirstName=$('["Name"]').val();
+ $("#details").text("Name : "+$('[name="Name"]').val() + "\n"+"Age : "+$('[name="Age"]').val()+"\n"+"Technology : "+$('[name="Tech"]').val());
+alert("Hi"+getElementByName("name").val());
+ }
+ </script> 
+
+<style>
+
+  h2,h1{
+    color: rgb(255, 36, 193);
+  text-align: center;
+  }
+  input{
+    width: 40%;
+    height: 25px;
+    border: 2px solid rgb(230, 39, 192);
+  }
+  body{
+    background-color: rgb(247, 204, 241);
+    width: 100%;
+    height: 100%;
+    
+  }
+a,button{
+    background-color: rgb(59, 104, 250);
+    padding: 10px;
+    border-color: rgb(59, 104, 250) ;
+    border-radius: 4px;
+    text-decoration: none;
+  }
+
+</style>
+</body>
